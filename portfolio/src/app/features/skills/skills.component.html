@@ -1,0 +1,24 @@
+<section id="skills" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center mb-12 max-w-4xl mx-auto">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-cyan-500"></div>
+        <h2 class="text-3xl md:text-4xl font-bold px-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Skills
+        </h2>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-blue-500/50 to-blue-500"></div>
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <app-skill-category title="Languages" [skills]="skills().languages" />
+            <app-skill-category title="Frontend" [skills]="skills().frontend" />
+            <app-skill-category title="Backend" [skills]="skills().backend" />
+            <app-skill-category title="Database" [skills]="skills().database" />
+            <app-skill-category title="Architecture" [skills]="skills().architecture" />
+            <app-skill-category title="Deployment" [skills]="skills().deployment" />
+            <app-skill-category title="Security" [skills]="skills().security" />
+            <app-skill-category title="Tools" [skills]="skills().tools" />
+            <app-skill-category title="Others" [skills]="skills().others" />
+        </div>
+    </div>
+</section>
