@@ -16,7 +16,7 @@ export class HeroComponent {
 
   downloadResume(): void {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/Hamzathul_Dilshad_Resume.pdf';
     link.download = 'Hamzathul_Dilshad_Resume.pdf';
     link.click();
   }
