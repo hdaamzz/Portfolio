@@ -81,6 +81,19 @@ private readonly _personalInfo = signal<PersonalInfo>({
         'Prepared WebRTC calling pipeline with real time connection setup, and unique phone number.'
       ],
       technologies: ['Angular 19', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Firebase Auth', 'JWT']
+    },
+    {
+      title: 'PingPoll',
+      subtitle: 'Real-Time Polling and Chat Application',
+      liveUrl: 'https://pingpoll.vercel.app/',
+      githubUrl: 'https://github.com/hdaamzz/PingPoll',
+      description: [
+        'Built a real-time polling and chat system with live vote updates and instant messaging.',
+        'Implemented Google OAuth with Firebase, JWT sessions, and secure HttpOnly cookie flow.',
+        'Developed modular backend using TypeScript, Express, Mongoose, and TSyringe-based DI.',
+        'Designed responsive Angular 19 UI with Signals, guards, interceptors, and lazy loading.'
+      ],
+      technologies: ['Angular 19', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Firebase Auth', 'Tailwind CSS']
     }
   ]);
 
