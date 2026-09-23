@@ -2,15 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
-import { CornerFrameComponent } from '../../shared/components/corner-frame/corner-frame.component';
+import { ExperienceCardComponent } from './experience-card/experience-card.component';
 
 @Component({
-  selector: 'app-about',
-  imports: [CommonModule, SectionHeaderComponent, CornerFrameComponent],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  selector: 'app-experience',
+  imports: [CommonModule, SectionHeaderComponent, ExperienceCardComponent],
+  templateUrl: './experience.component.html',
+  styleUrl: './experience.component.css'
 })
-export class AboutComponent {
+export class ExperienceComponent {
   private readonly dataService = inject(PortfolioDataService);
-  readonly personalInfo = this.dataService.personalInfo;
+
+  readonly experience = this.dataService.experience;
 }

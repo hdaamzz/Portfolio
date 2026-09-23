@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { Education } from '../../../core/models/education.interface';
+import { Experience } from '../../../core/models/experience.interface';
 import { IconComponent } from '../../../shared/components/icon/icon.component';
 import { CornerFrameComponent } from '../../../shared/components/corner-frame/corner-frame.component';
 
 @Component({
-  selector: 'app-education-card',
+  selector: 'app-experience-card',
   imports: [CommonModule, IconComponent, CornerFrameComponent],
-  templateUrl: './education-card.component.html',
-  styleUrl: './education-card.component.css'
+  templateUrl: './experience-card.component.html',
+  styleUrl: './experience-card.component.css'
 })
-export class EducationCardComponent {
-  education = input.required<Education>();
+export class ExperienceCardComponent {
+  experience = input.required<Experience>();
+  isLast = input<boolean>(false);
 }

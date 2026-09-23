@@ -13,8 +13,15 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI', Roboto, sans-serif;
-  background: #0a0a0a;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  background-color: #000000;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #ffffff;
+}
+
+::selection {
+  background: #ff3b30;
   color: #ffffff;
 }
 
@@ -25,5 +32,9 @@ body {
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .font-dot {
+    font-family: 'DotGothic16', 'Space Mono', monospace;
   }
 }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
-import { PortfolioDataService } from '../../../core/services/portfolio-data.service';
+import { Component, signal } from '@angular/core';
 import { scrollToSection } from '../../utils/scroll.utils';
+import { IconComponent } from '../icon/icon.component';
 
 
 interface NavItem {
@@ -10,28 +10,21 @@ interface NavItem {
 }
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  private readonly dataService = inject(PortfolioDataService);
-
   readonly isMobileMenuOpen = signal(false);
 
   readonly navItems: NavItem[] = [
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' }
   ];
-
-  readonly initials = () => {
-    // const name = this.dataService.personalInfo().name;
-    // return name.split(' ').map(n => n[0]).join('');
-    return ""
-  };
 
   scrollTo(sectionId: string): void {
     scrollToSection(sectionId);

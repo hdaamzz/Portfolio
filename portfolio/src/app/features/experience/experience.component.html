@@ -1,0 +1,11 @@
+<section id="experience" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <app-section-header index="02" title="Experience" />
+
+    <div class="space-y-10">
+      @for (exp of experience(); track exp.company) {
+      <app-experience-card [experience]="exp" [isLast]="$last" />
+      }
+    </div>
+  </div>
+</section>

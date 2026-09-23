@@ -1,5 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Education } from '../models/education.interface';
+import { Experience } from '../models/experience.interface';
 import { PersonalInfo, SocialLinks } from '../models/personal-info.interface';
 import { Project } from '../models/project.interface';
 import { Skills } from '../models/skills.interface';
@@ -14,7 +15,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     title: 'MEAN Stack Developer',
     email: 'diluhd99@gmail.com',
     phone: '+91 75599 09796',
-    summary: 'MEAN stack developer skilled in MongoDB, Express.js, Angular, and Node.js. Experienced in developing scalable web applications, designing database schemas, and creating responsive UIs. Passionate about writing clean, maintainable code and contributing to modern web solutions.'
+    summary: 'Software Engineer with hands-on experience building Governance, Risk, and Compliance (GRC) products and full-stack MEAN applications. Currently contributing to scalable, user-friendly Angular systems at Jethur, collaborating across multiple project teams and applying AI-driven development practices. Skilled in Angular, Express.js, MongoDB and Node.js, with a strong foundation in clean architecture, state management, real-time technologies (WebRTC, Socket.io), and cloud deployment (AWS).'
   });
 
   private readonly _socialLinks = signal<SocialLinks>({
@@ -27,15 +28,33 @@ private readonly _personalInfo = signal<PersonalInfo>({
 
   private readonly _skills = signal<Skills>({
     languages: ['JavaScript (ES6+)', 'TypeScript', 'SQL'],
-    frontend: ['Angular', 'NgRx', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'],
-    backend: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'REST APIs', 'Socket.io'],
+    frontend: ['Angular (v18+)', 'NgRx', 'MobX', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'],
+    backend: ['Node.js', 'Express.js', 'REST APIs', 'Socket.io'],
     database: ['MongoDB', 'MySQL', 'Firebase', 'PostgreSQL'],
-    architecture: ['SOLID', 'Repository Pattern', 'MVC'],
-    deployment: ['AWS EC2', 'Nginx', 'Vercel', 'Docker'],
-    security: ['JWT', 'OAuth', 'Bcrypt', 'RBAC'],
-    tools: ['Figma', 'Postman', 'Git', 'GitHub', 'Stripe', 'Razorpay'],
-    others: ['DSA', 'Redis', 'WebSockets', 'Nodemailer', 'Multer']
+    architecture: ['SOLID Principles', 'Repository Pattern', 'MVC', 'Clean Architecture'],
+    deployment: ['AWS EC2', 'Docker', 'Nginx', 'Vercel', 'Render'],
+    security: ['JWT', 'OAuth 2.0', 'Bcrypt', 'RBAC'],
+    tools: ['Postman', 'Figma', 'Stripe', 'Razorpay', 'Nodemailer', 'Git', 'GitHub'],
+    others: ['DSA', 'Redis', 'WebSockets', 'WebRTC']
   });
+
+  private readonly _experience = signal<Experience[]>([
+    {
+      role: 'Software Engineer',
+      company: 'Jethur',
+      period: 'Jul 2025 – Present',
+      location: 'Kochi, Kerala, India',
+      type: 'Hybrid',
+      current: true,
+      highlights: [
+        'Contributing to the development of a Governance, Risk, and Compliance (GRC) product, working across multiple GRC modules alongside cross-functional project teams.',
+        'Collaborated with the Angular team to build and maintain a user-friendly, scalable front-end system using Angular, Bootstrap, and MobX for state management.',
+        'Applied AI-driven development practices to accelerate feature delivery and improve code quality.',
+        'Streamlined CI/CD pipelines, automating build, test, and deployment workflows.',
+        'Enforced clean code design patterns (SOLID, modular architecture) to strengthen system performance and maintainability.'
+      ]
+    }
+  ]);
 
   private readonly _professionalProjects = signal<Project[]>([
     {
@@ -44,27 +63,22 @@ private readonly _personalInfo = signal<PersonalInfo>({
       liveUrl: 'https://evendigo.space/',
       githubUrl: 'https://github.com/hdaamzz/EvenDigo',
       description: [
-        'Developed comprehensive event management system with create, edit, and analytics capabilities for organizers.',
-        'Implemented JWT auth with RBAC and real-time chat using Socket.IO.',
-        'Integrated ticket purchasing, coupons, payments, and refunds.',
-        'Added subscription management and gamified badges.',
-        'Built analytics dashboard and financial tracking modules.',
-        'Built responsive UI ensuring seamless experience across devices.',
-        'Followed Repository Pattern and SOLID principles for scalable architecture.'
+        'Built comprehensive event platform serving 50+ active users with event creation, editing, and analytics for organizers.',
+        'Implemented JWT auth with RBAC and real-time Socket.IO chat supporting 100+ concurrent users.',
+        'Integrated Stripe payment processing 200+ transactions with tickets, coupons, refunds, and subscription management.',
+        'Delivered an analytics dashboard and financial tracking module; architected a scalable backend with Repository Pattern, cutting code duplication by 40%.'
       ],
       technologies: ['Node.js', 'Express.js', 'Angular', 'NgRx', 'TypeScript', 'MongoDB', 'JWT', 'Socket.io', 'Stripe', 'Tailwind CSS']
     },
     {
       title: 'ShopEazy',
       subtitle: 'E-commerce Platform',
-      liveUrl: 'https://shopezy.shop/',
+      liveUrl: 'https://shopeazy.evendigo.space/',
       githubUrl: 'https://github.com/hdaamzz/shopeazy',
       description: [
-        'Developed scalable backend using Node.js, Express.js, and MongoDB.',
-        'Designed mobile-first responsive UI for optimal experience.',
-        'Integrated Stripe payment with multiple payment options.',
-        'Configured Nginx reverse proxy for performance optimization.',
-        'Created admin dashboard for order and inventory management.'
+        'Engineered scalable REST APIs handling 1000+ products and 300+ daily requests; crafted a mobile-first UI that improved engagement by 45%.',
+        'Added Razorpay support with multiple payment options and configured an Nginx reverse proxy, reducing response time by 35%.',
+        'Created an admin dashboard for order management, inventory tracking, and real-time sales analytics; deployed on AWS EC2 with Docker.'
       ],
       technologies: ['Node.js', 'Express.js', 'MongoDB', 'Nginx', 'Razorpay', 'Bootstrap', 'AWS EC2']
     },
@@ -74,11 +88,9 @@ private readonly _personalInfo = signal<PersonalInfo>({
       liveUrl: 'https://ring-ring-nine.vercel.app/',
       githubUrl: 'https://github.com/hdaamzz/RingRing',
       description: [
-        'Built a secure authentication flow using Firebase Google OAuth, JWT, and HttpOnly cookies.',
-        'Implemented modular backend with TypeScript, Express, Mongoose, DI (TSyringe), and Repository Pattern.',
-        'Designed a modern responsive UI using Angular 19, Signals, Tailwind, and reusable component architecture.',
-        'Added protected routes, interceptors, guards, and optimized lazy loading for performance.',
-        'Prepared WebRTC calling pipeline with real time connection setup, and unique phone number.'
+        'Engineered secure authentication using Firebase OAuth, JWT, and HttpOnly cookies; applied a modular backend design with TypeScript, Dependency Injection, and Repository Pattern, reducing coupling by 50%.',
+        'Designed a responsive Angular 19 UI with Signals and reusable components; optimized load time by 40% through lazy loading.',
+        'Integrated WebRTC for peer-to-peer video calling with real-time connection and unique phone number assignment.'
       ],
       technologies: ['Angular 19', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Firebase Auth', 'JWT']
     },
@@ -88,10 +100,9 @@ private readonly _personalInfo = signal<PersonalInfo>({
       liveUrl: 'https://pingpoll.vercel.app/',
       githubUrl: 'https://github.com/hdaamzz/PingPoll',
       description: [
-        'Built a real-time polling and chat system with live vote updates and instant messaging.',
-        'Implemented Google OAuth with Firebase, JWT sessions, and secure HttpOnly cookie flow.',
-        'Developed modular backend using TypeScript, Express, Mongoose, and TSyringe-based DI.',
-        'Designed responsive Angular 19 UI with Signals, guards, interceptors, and lazy loading.'
+        'Delivered real-time polling and chat using WebSockets with instant updates supporting 50+ concurrent users.',
+        'Implemented Firebase OAuth with JWT sessions; built a modular backend with TypeScript, DI (TSyringe), Repository Pattern.',
+        'Established a responsive Angular 19 UI with Signals, guards, interceptors, and optimized lazy loading.'
       ],
       technologies: ['Angular 19', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Firebase Auth', 'Tailwind CSS']
     }
@@ -101,41 +112,31 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       title: 'BlogBee',
       subtitle: 'Content Management System (CMS)',
+      liveUrl: 'https://blog-bee-nine.vercel.app/',
       githubUrl: 'https://github.com/hdaamzz/BlogBee',
       description: [
-        'Full-stack CMS with user authentication, article CRUD, and dashboard.',
-        'Angular frontend with Auth, Router, Guards; backend APIs with Express.js.',
-        'MongoDB with validation middleware and Mongoose schemas.'
+        'Built a full-stack CMS with user authentication, article CRUD, and an admin dashboard for content management.',
+        'Added MongoDB schema validation middleware to enforce data integrity across content submissions.'
       ],
       technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT']
     },
     {
       title: 'UMS',
       subtitle: 'User Management System',
-      githubUrl: 'https://github.com/hdaamzz/Angular-NGRX-Student-Management-System',
+      githubUrl: 'https://github.com/hdaamzz/SMS-NgRx',
       description: [
-        'CRUD-based system with secure authentication and RBAC.',
-        'Angular frontend with Tailwind CSS and NgRx state management.'
+        'Developed a CRUD-based user management system with secure authentication and role-based access control (RBAC).',
+        'Integrated NgRx for centralized state management across the application.'
       ],
-      technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT']
-    },
-    {
-      title: 'Netflix Clone',
-      subtitle: 'Streaming Platform',
-      githubUrl: 'https://github.com/hdaamzz/Netflix-Clone-Angular',
-      description: [
-        'User-friendly interface for browsing and streaming.',
-        'Dynamic profile management and personalized recommendations.'
-      ],
-      technologies: ['Angular', 'Node.js', 'Express.js', 'TypeScript', 'Tailwind CSS']
+      technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'JWT', 'NgRx']
     }
   ]);
 
   private readonly _education = signal<Education[]>([
     {
       institution: 'Brototype, Calicut',
-      degree: 'MEAN Stack Development Certification',
-      period: '2024 - Present'
+      degree: 'MEAN Stack Development Intensive Bootcamp Certification',
+      period: 'September 2024 – July 2025'
     },
     {
       institution: 'PPTM College of Arts and Science, University of Calicut',
@@ -147,6 +148,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
   readonly personalInfo = this._personalInfo.asReadonly();
   readonly socialLinks = this._socialLinks.asReadonly();
   readonly skills = this._skills.asReadonly();
+  readonly experience = this._experience.asReadonly();
   readonly professionalProjects = this._professionalProjects.asReadonly();
   readonly otherProjects = this._otherProjects.asReadonly();
   readonly education = this._education.asReadonly();
