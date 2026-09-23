@@ -1,0 +1,16 @@
+export type IconName =
+  | 'mail'
+  | 'phone'
+  | 'whatsapp'
+  | 'instagram'
+  | 'linkedin'
+  | 'github'
+  | 'leetcode'
+  | 'external-link'
+  | 'download'
+  | 'menu'
+  | 'close'
+  | 'calendar'
+  | 'graduation-cap'
+  | 'briefcase'
+  | 'map-pin';

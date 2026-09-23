@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { PortfolioDataService } from '../../core/services/portfolio-data.service';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-hero',
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })

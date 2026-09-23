@@ -1,0 +1,48 @@
+<div class="flex gap-6">
+  <!-- Timeline rail -->
+  <div class="flex flex-col items-center">
+    <div class="w-3 h-3 rounded-full mt-2 flex-shrink-0 border"
+      [class]="experience().current ? 'bg-accent-500 border-accent-500 ring-4 ring-accent-100' : 'bg-transparent border-line'"></div>
+    @if (!isLast()) {
+    <div class="w-px flex-1 border-l border-dashed border-line mt-2"></div>
+    }
+  </div>
+
+  <!-- Content -->
+  <div class="pb-2 flex-1">
+    <div class="relative bg-surface backdrop-blur-sm border border-line rounded-2xl p-6 hover:border-white/30 transition-colors">
+      <app-corner-frame />
+      <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+        <div>
+          <h3 class="text-lg font-bold text-ink-900 uppercase tracking-wide">{{ experience().role }}</h3>
+          <p class="text-accent-500 font-bold text-sm uppercase tracking-wide">{{ experience().company }}</p>
+        </div>
+        @if (experience().current) {
+        <span class="font-dot px-3 py-1 bg-accent-50 text-accent-500 text-xs rounded-full border border-accent-100 uppercase">
+          ● Current
+        </span>
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-4 text-xs uppercase tracking-wide text-ink-400 mb-4">
+        <span class="flex items-center gap-1.5">
+          <app-icon name="calendar" className="w-4 h-4" />
+          {{ experience().period }}
+        </span>
+        <span class="flex items-center gap-1.5">
+          <app-icon name="map-pin" className="w-4 h-4" />
+          {{ experience().location }} · {{ experience().type }}
+        </span>
+      </div>
+
+      <ul class="space-y-2">
+        @for (highlight of experience().highlights; track highlight) {
+        <li class="flex gap-2 text-sm text-ink-700 leading-relaxed">
+          <span class="text-ink-400 mt-0.5 font-dot">›</span>
+          <span>{{ highlight }}</span>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

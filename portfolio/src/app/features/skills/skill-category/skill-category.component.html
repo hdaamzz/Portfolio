@@ -1,9 +1,10 @@
-<div class="bg-[#111111] border border-gray-800 rounded-2xl p-6">
-    <h3 class="text-lg font-semibold mb-4 text-cyan-400">{{ title() }}</h3>
-    <div class="flex flex-wrap gap-2">
+<div class="relative bg-surface backdrop-blur-sm border border-line rounded-2xl p-6 h-full min-h-[180px] flex flex-col hover:border-white/30 transition-colors">
+    <app-corner-frame />
+    <h3 class="text-sm font-bold mb-4 text-ink-900 uppercase tracking-[0.2em]">{{ title() }}</h3>
+    <div class="flex flex-wrap gap-2 content-start">
         @for (skill of skills(); track skill) {
         <span
-            class="px-3 py-1.5 bg-[#1a1a1a] text-sm rounded-lg border border-gray-800 text-gray-300 hover:border-cyan-500/50 transition-colors">
+            class="px-3 py-1.5 bg-transparent text-xs rounded-full border border-line text-ink-700 uppercase tracking-wide">
             {{ skill }}
         </span>
         }
