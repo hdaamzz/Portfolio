@@ -37,4 +37,76 @@ body {
   .font-dot {
     font-family: 'DotGothic16', 'Space Mono', monospace;
   }
+
+  .accent-spin {
+    animation: accent-spin 20s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .accent-spin-reverse {
+    animation: accent-spin 26s linear infinite reverse;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .accent-pulse {
+    animation: accent-pulse 2.4s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .accent-dash {
+    animation: accent-dash 2.5s linear infinite;
+  }
+
+  .accent-ping {
+    animation: accent-ping 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes accent-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes accent-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes accent-dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes accent-ping {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accent-spin,
+  .accent-spin-reverse,
+  .accent-pulse,
+  .accent-dash,
+  .accent-ping {
+    animation: none;
+  }
 }
