@@ -1,4 +1,19 @@
-<section id="skills" class="py-20 px-6">
+<section id="skills" class="relative py-20 px-6 overflow-hidden">
+
+    <!-- Corner accent: top-left (code brackets) -->
+    <svg class="hidden md:block absolute top-6 left-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+        <path d="M45 30 L20 60 L45 90" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-pulse" />
+        <path d="M75 30 L100 60 L75 90" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-pulse" style="animation-delay: 0.5s" />
+    </svg>
+
+    <!-- Corner accent: bottom-right (circuit nodes) -->
+    <svg class="hidden md:block absolute bottom-6 right-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+        <path d="M20 100 V70 H50 V40 H100" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5" class="accent-dash" />
+        <circle cx="20" cy="100" r="3" fill="#a3e635" class="accent-pulse" />
+        <circle cx="50" cy="70" r="3" fill="#a3e635" class="accent-pulse" style="animation-delay: 0.4s" />
+        <circle cx="100" cy="40" r="3" fill="#a3e635" class="accent-pulse" style="animation-delay: 0.8s" />
+    </svg>
+
     <div class="max-w-7xl mx-auto">
         <app-section-header index="03" title="Skills" />
 

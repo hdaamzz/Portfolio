@@ -1,4 +1,18 @@
-<section id="experience" class="py-20 px-6">
+<section id="experience" class="relative py-20 px-6 overflow-hidden">
+
+  <!-- Corner accent: top-left (step path) -->
+  <svg class="hidden md:block absolute top-6 left-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <path d="M10 100 H35 V75 H60 V50 H85 V25 H110" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" class="accent-dash" />
+  </svg>
+
+  <!-- Corner accent: bottom-right (timeline nodes) -->
+  <svg class="hidden md:block absolute bottom-6 right-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <path d="M15 60 H105" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3 5" class="accent-dash" />
+    <circle cx="30" cy="60" r="4" fill="#fb923c" class="accent-pulse" />
+    <circle cx="60" cy="60" r="4" fill="#fb923c" class="accent-pulse" style="animation-delay: 0.3s" />
+    <circle cx="90" cy="60" r="4" fill="#fb923c" class="accent-pulse" style="animation-delay: 0.6s" />
+  </svg>
+
   <div class="max-w-4xl mx-auto">
     <app-section-header index="02" title="Experience" />
 

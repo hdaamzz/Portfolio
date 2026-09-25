@@ -1,4 +1,19 @@
-<section id="about" class="py-20 px-6">
+<section id="about" class="relative py-20 px-6 overflow-hidden">
+
+    <!-- Corner accent: top-left (nested seal) -->
+    <svg class="hidden md:block absolute top-6 left-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+        <rect x="35" y="35" width="40" height="40" stroke="#fbbf24" stroke-width="1.5" class="accent-spin" />
+        <rect x="45" y="45" width="20" height="20" stroke="#fbbf24" stroke-width="1.5" opacity="0.6" class="accent-spin-reverse" />
+        <circle cx="55" cy="55" r="2.5" fill="#fbbf24" class="accent-pulse" />
+    </svg>
+
+    <!-- Corner accent: bottom-right (target rings) -->
+    <svg class="hidden md:block absolute bottom-6 right-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="45" stroke="#38bdf8" stroke-width="1.25" />
+        <circle cx="60" cy="60" r="28" stroke="#38bdf8" stroke-width="1.25" class="accent-pulse" />
+        <circle cx="60" cy="60" r="4" fill="#38bdf8" class="accent-pulse" />
+    </svg>
+
     <div class="max-w-7xl mx-auto">
         <app-section-header index="01" title="About" />
 

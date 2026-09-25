@@ -1,4 +1,42 @@
-<section class="pt-32 pb-20 px-6">
+<section class="relative pt-32 pb-20 px-6 overflow-hidden">
+
+  <!-- Corner accent: top-left (bracket + node) -->
+  <svg class="hidden md:block absolute top-6 left-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <defs>
+      <linearGradient id="heroCornerTL" x1="0" y1="120" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#3b82f6" />
+        <stop offset="100%" stop-color="#ff3b30" />
+      </linearGradient>
+    </defs>
+    <path d="M2 110 V14 Q2 2 14 2 H110" stroke="url(#heroCornerTL)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="34" cy="34" r="3.5" fill="#ff3b30" class="accent-pulse" />
+    <path d="M34 44 V60 M24 34 H8" stroke="#3b82f6" stroke-width="1.25" stroke-dasharray="3 4" class="accent-dash" />
+  </svg>
+
+  <!-- Corner accent: top-right (mirrored bracket + diamond) -->
+  <svg class="hidden md:block absolute top-6 right-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <defs>
+      <linearGradient id="heroCornerTR" x1="120" y1="120" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#34d399" />
+        <stop offset="100%" stop-color="#ff6b8a" />
+      </linearGradient>
+    </defs>
+    <path d="M118 110 V14 Q118 2 106 2 H10" stroke="url(#heroCornerTR)" stroke-width="2" stroke-linecap="round" />
+    <rect x="79" y="29" width="11" height="11" stroke="#ff6b8a" stroke-width="1.5" class="accent-spin" />
+  </svg>
+
+  <!-- Corner accent: bottom-left (orbit + reticle) -->
+  <svg class="hidden md:block absolute bottom-6 left-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <circle cx="55" cy="65" r="36" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 6" class="accent-dash" />
+    <path d="M55 15 V33 M55 97 V115 M5 65 H23 M87 65 H105" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+
+  <!-- Corner accent: bottom-right (triangle in orbit) -->
+  <svg class="hidden md:block absolute bottom-6 right-6 w-20 h-20 lg:w-28 lg:h-28 opacity-70 pointer-events-none" viewBox="0 0 120 120" fill="none">
+    <circle cx="65" cy="45" r="40" stroke="#ff6b8a" stroke-width="1.5" class="accent-pulse" />
+    <path d="M25 105 L90 105 L90 20 Z" stroke="#34d399" stroke-width="1.5" stroke-linejoin="round" />
+  </svg>
+
   <div class="max-w-7xl mx-auto text-center">
 
     <p class="font-dot text-accent-500 text-sm tracking-widest mb-4 uppercase">// Hello, I'm</p>
