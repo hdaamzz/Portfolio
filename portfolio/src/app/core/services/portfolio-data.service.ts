@@ -31,7 +31,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     frontend: ['Angular (v18+)', 'NgRx', 'MobX', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'],
     backend: ['Node.js', 'Express.js', 'REST APIs', 'Socket.io'],
     database: ['MongoDB', 'MySQL', 'Firebase', 'PostgreSQL'],
-    architecture: ['SOLID Principles', 'Repository Pattern', 'MVC', 'Clean Architecture'],
+    architecture: ['SOLID Principles', 'Repository Pattern', 'MVC'],
     deployment: ['AWS EC2', 'Docker', 'Nginx', 'Vercel', 'Render'],
     security: ['JWT', 'OAuth 2.0', 'Bcrypt', 'RBAC'],
     tools: ['Postman', 'Figma', 'Stripe', 'Razorpay', 'Nodemailer', 'Git', 'GitHub'],
@@ -42,7 +42,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       role: 'Software Engineer',
       company: 'Jethur',
-      period: 'Jul 2025 – Present',
+      period: 'Feb 2026 – Present',
       location: 'Kochi, Kerala, India',
       type: 'Hybrid',
       current: true,
@@ -136,7 +136,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       institution: 'Brototype, Calicut',
       degree: 'MEAN Stack Development Intensive Bootcamp Certification',
-      period: 'September 2024 – July 2025'
+      period: 'Feb 2024 – Jan 2026'
     },
     {
       institution: 'PPTM College of Arts and Science, University of Calicut',
