@@ -42,7 +42,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       role: 'Software Engineer',
       company: 'Jethur',
-      period: 'Sep 2025 – Present',
+      period: 'May 2025 – Sep 2026',
       location: 'Kochi, Kerala, India',
       type: 'Hybrid',
       current: true,
@@ -136,7 +136,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       institution: 'Brototype, Calicut',
       degree: 'MEAN Stack Development Intensive Bootcamp Certification',
-      period: 'Feb 2024 – Sep 2025'
+      period: 'Feb 2024 – May 2025'
     },
     {
       institution: 'PPTM College of Arts and Science, University of Calicut',
