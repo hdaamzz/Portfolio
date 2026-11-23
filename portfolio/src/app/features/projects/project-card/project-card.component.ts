@@ -8,15 +8,27 @@ import { CornerFrameComponent } from '../../../shared/components/corner-frame/co
   selector: 'app-project-card',
   imports: [CommonModule, IconComponent, CornerFrameComponent],
   templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.css'
+  styleUrl: './project-card.component.css',
 })
 export class ProjectCardComponent {
   project = input.required<Project>();
   isProfessional = input<boolean>(true);
 
-  cardClass = () => 'relative bg-surface backdrop-blur-sm border border-line rounded-2xl p-6 hover:border-white/30 transition-all group';
+  cardClass = () =>
+    'relative bg-surface backdrop-blur-sm border border-line rounded-2xl p-6 hover:border-white/30 transition-all group flex flex-col h-full';
 
-  titleClass = () => 'text-lg font-bold text-ink-900 uppercase tracking-wide group-hover:text-accent-500 transition-colors';
+  titleClass = () =>
+    'text-lg font-bold text-ink-900 uppercase tracking-wide group-hover:text-accent-500 transition-colors';
 
   iconClass = () => 'text-ink-400 hover:text-white transition-colors';
+
+  onImageError(event: Event): void {
+    const image = event.target as HTMLImageElement;
+
+    // Prevent repeated requests if an image is missing.
+    image.onerror = null;
+
+    // Use the project's existing background color.
+    image.style.display = 'none';
+  }
 }

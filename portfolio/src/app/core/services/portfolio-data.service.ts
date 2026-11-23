@@ -45,7 +45,7 @@ private readonly _personalInfo = signal<PersonalInfo>({
       period: 'May 2025 – Sep 2026',
       location: 'Kochi, Kerala, India',
       type: 'Hybrid',
-      current: true,
+      current: false,
       highlights: [
         'Contributing to the development of a Governance, Risk, and Compliance (GRC) product, working across multiple GRC modules alongside cross-functional project teams.',
         'Collaborated with the Angular team to build and maintain a user-friendly, scalable front-end system using Angular, Bootstrap, and MobX for state management.',
@@ -59,8 +59,9 @@ private readonly _personalInfo = signal<PersonalInfo>({
   private readonly _professionalProjects = signal<Project[]>([
     {
       title: 'EvenDigo',
+      imageUrl: '/images/projects/evendigo.webp',
       subtitle: 'Event Management and Booking System',
-      liveUrl: 'https://evendigo.space/',
+      liveUrl: 'https://evendigo.hamzathuldilshad.site/',
       githubUrl: 'https://github.com/hdaamzz/EvenDigo',
       description: [
         'Built comprehensive event platform serving 50+ active users with event creation, editing, and analytics for organizers.',
@@ -73,7 +74,8 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       title: 'ShopEazy',
       subtitle: 'E-commerce Platform',
-      liveUrl: 'https://shopeazy.evendigo.space/',
+      imageUrl: '/images/projects/shopeazy.webp',
+      liveUrl: 'https://shopeazy.hamzathuldilshad.site/',
       githubUrl: 'https://github.com/hdaamzz/shopeazy',
       description: [
         'Engineered scalable REST APIs handling 1000+ products and 300+ daily requests; crafted a mobile-first UI that improved engagement by 45%.',
@@ -85,7 +87,8 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       title: 'RingRing',
       subtitle: 'Video Calling Platform',
-      liveUrl: 'https://ring-ring-nine.vercel.app/',
+      imageUrl: '/images/projects/ringring.webp',
+      liveUrl: 'https://ringring.hamzathuldilshad.site/',
       githubUrl: 'https://github.com/hdaamzz/RingRing',
       description: [
         'Engineered secure authentication using Firebase OAuth, JWT, and HttpOnly cookies; applied a modular backend design with TypeScript, Dependency Injection, and Repository Pattern, reducing coupling by 50%.',
@@ -97,8 +100,8 @@ private readonly _personalInfo = signal<PersonalInfo>({
     {
       title: 'PingPoll',
       subtitle: 'Real-Time Polling and Chat Application',
-      liveUrl: 'https://pingpoll.vercel.app/',
-      githubUrl: 'https://github.com/hdaamzz/PingPoll',
+      imageUrl: '/images/projects/pingpoll.webp',
+      liveUrl: 'https://pingpoll.hamzathuldilshad.site/',
       description: [
         'Delivered real-time polling and chat using WebSockets with instant updates supporting 50+ concurrent users.',
         'Implemented Firebase OAuth with JWT sessions; built a modular backend with TypeScript, DI (TSyringe), Repository Pattern.',
@@ -110,8 +113,32 @@ private readonly _personalInfo = signal<PersonalInfo>({
 
   private readonly _otherProjects = signal<Project[]>([
     {
+    title: 'TaskFlow',
+    subtitle: 'Task Management Application',
+    imageUrl: '/images/projects/taskflow.webp',
+    liveUrl: 'https://task-flow-ng20.vercel.app/',
+    githubUrl: 'https://github.com/hdaamzz/Task-Management-Angular-20',
+    description: [
+      'Developed an Angular 20 task management application with standalone components, supporting task creation, editing, deletion, deadline management, and status tracking.',
+      'Implemented MobX state management to synchronize task data across list, detail, and calendar views.',
+      'Integrated ngx-quill for rich text editing and developed multi-level comment threads with nested replies.',
+      'Integrated FullCalendar to visualize task deadlines with color-coded statuses and interactive task navigation.',
+      'Built a responsive interface using Tailwind CSS, RxJS, and reusable Angular components.'
+    ],
+    technologies: [
+      'Angular 20',
+      'TypeScript',
+      'MobX',
+      'RxJS',
+      'FullCalendar',
+      'ngx-quill',
+      'Tailwind CSS'
+    ]
+    },
+    {
       title: 'BlogBee',
       subtitle: 'Content Management System (CMS)',
+      imageUrl: '/images/projects/blogbee.webp',
       liveUrl: 'https://blog-bee-nine.vercel.app/',
       githubUrl: 'https://github.com/hdaamzz/BlogBee',
       description: [
