@@ -1,39 +1,148 @@
+
 <div [class]="cardClass()">
-    <app-corner-frame />
-    <div class="flex justify-between items-start mb-4">
-        <h3 [class]="titleClass()">
-            {{ project().title }}
-        </h3>
-        <div class="flex gap-2">
-            @if (project().githubUrl) {
-            <a [href]="project().githubUrl" target="_blank" [class]="iconClass()">
-                <app-icon name="github" className="w-5 h-5" />
-            </a>
-            }
-            @if (project().liveUrl) {
-            <a [href]="project().liveUrl" target="_blank" [class]="iconClass()">
-                <app-icon name="external-link" className="w-5 h-5" />
-            </a>
-            }
+
+  <app-corner-frame />
+
+  <!-- Project Screenshot -->
+  @if (project().imageUrl) {
+    <div
+      class="relative mb-5 overflow-hidden rounded-xl
+             border border-line bg-surface group/image">
+
+      <a
+        [href]="project().liveUrl || project().githubUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="'View ' + project().title"
+        class="block relative aspect-video overflow-hidden">
+
+        <img
+          [src]="project().imageUrl"
+          [alt]="project().title + ' screenshot'"
+          loading="lazy"
+          decoding="async"
+          class="w-full h-full object-cover
+                 transition-transform duration-500
+                 ease-out group-hover/image:scale-105"
+          (error)="onImageError($event)" />
+
+        <!-- Subtle overlay -->
+        <div
+          class="absolute inset-0 bg-black/0
+                 group-hover/image:bg-black/40
+                 transition-colors duration-300">
         </div>
+
+        <!-- Preview label -->
+        <div
+          class="absolute inset-0 flex items-center
+                 justify-center opacity-0
+                 group-hover/image:opacity-100
+                 transition-opacity duration-300">
+
+          <span
+            class="flex items-center gap-2 px-4 py-2
+                   rounded-full bg-black/70
+                   border border-white/20
+                   text-white text-xs uppercase
+                   tracking-wider backdrop-blur-sm">
+
+            <app-icon
+              name="external-link"
+              className="w-4 h-4" />
+
+            View Project
+
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+  }
+
+  <!-- Title and links -->
+  <div class="flex justify-between items-start mb-4 gap-3">
+
+    <h3 [class]="titleClass()">
+      {{ project().title }}
+    </h3>
+
+    <div class="flex gap-2 shrink-0">
+
+      @if (project().githubUrl) {
+        <a
+          [href]="project().githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="project().title + ' GitHub'"
+          [class]="iconClass()">
+
+          <app-icon
+            name="github"
+            className="w-5 h-5" />
+
+        </a>
+      }
+
+      @if (project().liveUrl) {
+        <a
+          [href]="project().liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="project().title + ' live demo'"
+          [class]="iconClass()">
+
+          <app-icon
+            name="external-link"
+            className="w-5 h-5" />
+
+        </a>
+      }
+
     </div>
 
-    <p class="text-ink-500 text-xs uppercase tracking-wide mb-4">{{ project().subtitle }}</p>
+  </div>
 
-    <p class="text-ink-700 text-sm mb-6 line-clamp-3">
-        {{ project().description[0] }}
-    </p>
+  <!-- Subtitle -->
+  <p class="text-ink-500 text-xs uppercase
+            tracking-wide mb-4">
+    {{ project().subtitle }}
+  </p>
 
-    <div class="flex flex-wrap gap-2">
-        @for (tech of project().technologies.slice(0, 4); track tech) {
-        <span class="px-3 py-1 bg-transparent text-xs rounded-full border border-line text-ink-500 uppercase tracking-wide">
-            {{ tech }}
-        </span>
-        }
-        @if (project().technologies.length > 4) {
-        <span class="px-3 py-1 bg-transparent text-xs rounded-full border border-line text-ink-500">
-            +{{ project().technologies.length - 4 }}
-        </span>
-        }
-    </div>
+  <!-- Description -->
+  <p class="text-ink-700 text-sm mb-6 line-clamp-3">
+    {{ project().description[0] }}
+  </p>
+
+  <!-- Technologies -->
+  <div class="flex flex-wrap gap-2 mt-auto">
+
+    @for (tech of project().technologies.slice(0, 4); track tech) {
+
+      <span
+        class="px-3 py-1 bg-transparent text-xs
+               rounded-full border border-line
+               text-ink-500 uppercase tracking-wide">
+        {{ tech }}
+      </span>
+
+    }
+
+    @if (project().technologies.length > 4) {
+
+      <span
+        class="px-3 py-1 bg-transparent text-xs
+               rounded-full border border-line
+               text-ink-500">
+
+        +{{ project().technologies.length - 4 }}
+
+      </span>
+
+    }
+
+  </div>
+
 </div>
